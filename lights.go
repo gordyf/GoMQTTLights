@@ -80,7 +80,6 @@ func lightsSet(action lightState) {
 
 // Handles incoming MQTT messages
 var onMessage MQTT.MessageHandler = func(client *MQTT.Client, msg MQTT.Message) {
-	fmt.Printf("Got message: %s\n", string(msg.Payload()))
 	switch msg.Payload()[0] {
 	default:
 		fmt.Printf("Unknown payload: %s\n", msg.Payload())
